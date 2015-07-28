@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="D:\StudioProjects\PPad\libs\pgyer_sdk_2.1.2.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="13e6d1b17a22bd3c1c78bfccf26c535ba28053af">
+        <dex dex="D:\StudioProjects\PPad\app\build\intermediates\pre-dexed\debug\pgyer_sdk_2.1.2-5a08039db4d9e8e2e5d418239bd4811cf80e3c21.jar" />
+    </item>
+
+</items>
