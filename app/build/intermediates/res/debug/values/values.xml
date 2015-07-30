@@ -70,4 +70,12 @@
     <string name="title_activity_search">Search</string>
     <string name="wel_title">租\t\t客</string>
     <string name="wel_title1">来一场说走就走的旅行</string>
+    <!-- From: file:/D:/StudioProjects/PPad/app/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="AnimationFade">
+
+        <!-- PopupWindow左右弹出的效果 -->
+        <item name="android:windowEnterAnimation">@anim/in_lefttoright</item>
+        <item name="android:windowExitAnimation">@anim/out_righttoleft</item>
+    </style>
 </resources>

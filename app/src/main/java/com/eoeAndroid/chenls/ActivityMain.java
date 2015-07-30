@@ -7,12 +7,14 @@ import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.KeyEvent;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.PopupWindow;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SimpleCursorAdapter;
@@ -33,12 +35,12 @@ public class ActivityMain extends ListActivity {
     private static final int ACTIVITY_EDIT = 1;
     private DiaryDbAdapter mDbHelper;
     private Cursor mDiaryCursor;
-    private Button add;
+    private Button add, menu;
     private long index_id = 0;// 长按删除指定数据的索引
     private RadioGroup bt_rg;
     private String title_data = "room";
     private TextView btnSearch;
-    private TextView image;
+    private PopupWindow popupWindow;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -47,10 +49,10 @@ public class ActivityMain extends ListActivity {
         mDbHelper = new DiaryDbAdapter(this);
         mDbHelper.open();
         renderListView(title_data);
-        image = (TextView) findViewById(R.id.image);
         btnSearch = (TextView) findViewById(R.id.btnSearch);
         btnSearch.setOnClickListener(new TextOnClickListenerImpl());
         add = (Button) this.findViewById(R.id.add);
+        menu = (Button) this.findViewById(R.id.menu);
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,6 +61,7 @@ public class ActivityMain extends ListActivity {
                 startActivity(intent);
             }
         });
+        menu.setOnClickListener(popClick);
         PgyerDialog.setDialogTitleBackgroundColor("#ff329de2");
         PgyerDialog.setDialogTitleTextColor("#ffffff");
         // 版本检测方式1：无更新回调
@@ -81,6 +84,95 @@ public class ActivityMain extends ListActivity {
                 renderListView(title_data);
             }
         });
+    }
+
+    // 点击弹出左侧菜单的显示方式
+    View.OnClickListener popClick = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            // TODO Auto-generated method stub
+            getPopupWindow();
+            // 这里是位置显示方式,在屏幕的左侧
+//            popupWindow.showAtLocation(v, Gravity.LEFT, 5, 5);
+            popupWindow.showAsDropDown(v, 0, 20);
+        }
+    };
+    /**
+     * 创建PopupWindow
+     */
+    protected void initPopuptWindow() {
+        // TODO Auto-generated method stub
+        // 获取自定义布局文件activity_popupwindow_left.xml的视图
+        View popupWindow_view = getLayoutInflater().inflate(R.layout.activity_popupwindow_left, null,
+                false);
+        // 创建PopupWindow实例,200,LayoutParams.MATCH_PARENT分别是宽度和高度
+        popupWindow = new PopupWindow(popupWindow_view, 200, 300, true);
+        // 设置动画效果
+        popupWindow.setAnimationStyle(R.style.AnimationFade);
+        // 点击其他地方消失
+        popupWindow_view.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                // TODO Auto-generated method stub
+                if (popupWindow != null && popupWindow.isShowing()) {
+                    popupWindow.dismiss();
+                    popupWindow = null;
+                }
+                return false;
+            }
+        });
+        Button open = (Button) popupWindow_view.findViewById(R.id.open);
+        Button save = (Button) popupWindow_view.findViewById(R.id.save);
+        Button close = (Button) popupWindow_view.findViewById(R.id.close);
+        open.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if (popupWindow != null && popupWindow.isShowing()) {
+                    popupWindow.dismiss();
+                    popupWindow = null;
+                }
+                Toast.makeText(ActivityMain.this, "open",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+        save.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if (popupWindow != null && popupWindow.isShowing()) {
+                    popupWindow.dismiss();
+                    popupWindow = null;
+                }
+                Toast.makeText(ActivityMain.this, "save",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+        close.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if (popupWindow != null && popupWindow.isShowing()) {
+                    popupWindow.dismiss();
+                    popupWindow = null;
+                }
+                Toast.makeText(ActivityMain.this, "close",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+
+    /***
+     * 获取PopupWindow实例
+     */
+    private void getPopupWindow() {
+        if (null != popupWindow) {
+            popupWindow.dismiss();
+            return;
+        } else {
+            initPopuptWindow();
+        }
     }
 
     // 按钮点击事件
@@ -125,18 +217,6 @@ public class ActivityMain extends ListActivity {
         int[] to = new int[]{R.id.image, R.id.text1, R.id.text2, R.id.text3};
         SimpleCursorAdapter notes = new SimpleCursorAdapter(this,
                 R.layout.listview_item, mDiaryCursor, from, to);
-//        SimpleCursorAdapter.ViewBinder viewBinder = new SimpleCursorAdapter.ViewBinder() {
-//            @Override
-//            public boolean setViewValue(View view, Cursor cursor, int columnIndex) {
-//                // TODO Auto-generated method stub
-//                if (cursor.getColumnIndex(DiaryDbAdapter.KEY_NAME) == columnIndex) {    //duration为数据库中对应的属性列
-//                    image.setText("哈哈" + cursor.getString(columnIndex));  //将数据库中的数据除以1000以后在显示
-//                    return true;
-//                }
-//                return false;
-//            }
-//        };
-//        notes.setViewBinder(viewBinder);
         setListAdapter(notes);
         final ListView lv;
         lv = getListView();
