@@ -26,6 +26,7 @@ public class Search extends ListActivity {
     private DiaryDbAdapter mDbHelper;
     private Cursor mDiaryCursor;
     private static final int ACTIVITY_EDIT = 1;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +35,7 @@ public class Search extends ListActivity {
         mDbHelper.open();
         ivDeleteText = (ImageView) findViewById(R.id.ivDeleteText);
         etSearch = (EditText) findViewById(R.id.etSearch);
-        btnSearch= (TextView) findViewById(R.id.btnSearch);
+        btnSearch = (TextView) findViewById(R.id.btnSearch);
         btnSearch.setOnClickListener(new TextOnClickListenerImpl());
         ivDeleteText.setOnClickListener(new OnClickListener() {
 
@@ -66,6 +67,7 @@ public class Search extends ListActivity {
             }
         });
     }
+
     // 按钮点击事件
     private class TextOnClickListenerImpl implements View.OnClickListener {
         @Override
@@ -79,16 +81,17 @@ public class Search extends ListActivity {
             }
         }
     }
+
     /**
      * 读取数据库数据，展示在list中
      */
     private void renderListView(String data) {
         mDiaryCursor = mDbHelper.getDiary(data);
         startManagingCursor(mDiaryCursor);
-        String[] from = new String[]{DiaryDbAdapter.KEY_ROOM, DiaryDbAdapter.KEY_NAME,
+        String[] from = new String[]{DiaryDbAdapter.KEY_FRIST_NAME, DiaryDbAdapter.KEY_ROOM, DiaryDbAdapter.KEY_NAME,
                 DiaryDbAdapter.KEY_DATE};
 
-        int[] to = new int[]{R.id.text1, R.id.text2, R.id.text3};
+        int[] to = new int[]{R.id.image, R.id.text1, R.id.text2, R.id.text3};
         SimpleCursorAdapter notes = new SimpleCursorAdapter(this,
                 R.layout.listview_item, mDiaryCursor, from, to);
         setListAdapter(notes);

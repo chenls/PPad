@@ -11,6 +11,7 @@ public class DiaryDbAdapter {
     public static final String KEY_ROWID = "_id";
     public static final String KEY_ROOM = "room";
     public static final String KEY_NAME = "name";
+    public static final String KEY_FRIST_NAME = "frist_name";
     public static final String KEY_DATE = "date";
     public static final String KEY_DAY = "day";
     public static final String KEY_PHONE = "phone";
@@ -25,6 +26,7 @@ public class DiaryDbAdapter {
     private static final String DATABASE_CREATE = "create table diary (_id integer primary key autoincrement" +
             ", room varchar(20) not null" +
             ", name varchar(20) not null" +
+            ", frist_name varchar(2) not null" +
             ", date Date DEFAULT NULL" +
             ", day int(2) DEFAULT NULL" +
             ", phone int(11) DEFAULT NULL" +
@@ -87,8 +89,10 @@ public class DiaryDbAdapter {
         ContentValues initialValues = new ContentValues();
         initialValues.put(KEY_ROOM, room);
         initialValues.put(KEY_NAME, name);
+        String frist_name = (String) name.subSequence(0, 1);
+        initialValues.put(KEY_FRIST_NAME, frist_name);
         initialValues.put(KEY_DATE, date);
-        String[] day_array=date.split("-");
+        String[] day_array = date.split("-");
         String day = day_array[2];
         initialValues.put(KEY_DAY, day);
         initialValues.put(KEY_PHONE, phone);
@@ -143,6 +147,14 @@ public class DiaryDbAdapter {
     public boolean updateDiary(String rowId, String title, String date) {
         ContentValues args = new ContentValues();
         args.put(title, date);
+        if (title.equals("date")) {
+            String[] day_array = date.split("-");
+            String day = day_array[2];
+            args.put(KEY_DAY, day);
+        } else if (title.equals("name")) {
+            String frist_name = (String) date.subSequence(0, 1);
+            args.put(KEY_FRIST_NAME, frist_name);
+        }
         return mDb.update(DATABASE_TABLE, args, KEY_ROWID + "=" + rowId, null) > 0;
     }
 }

@@ -39,7 +39,7 @@
                 android:layout_marginRight="15dp"
                 android:background="@drawable/shape2"
                 android:drawableLeft="@drawable/ic_action_search"
-                android:hint="请输入类容..."
+                android:hint="请输入内容..."
                 android:padding="7dp"
                 android:singleLine="true"
                 android:textSize="15sp" />

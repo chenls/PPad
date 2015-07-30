@@ -16,15 +16,16 @@ public final class R {
     public static final class color {
         public static final int assistant_text_color=0x7f060000;
         public static final int black=0x7f060001;
-        public static final int line_gray=0x7f060002;
-        public static final int main_background=0x7f060003;
-        public static final int main_color=0x7f060004;
-        public static final int main_gray=0x7f060005;
-        public static final int main_gumbo=0x7f060006;
-        public static final int main_text_color=0x7f060007;
-        public static final int select_color=0x7f060008;
-        public static final int toast_color=0x7f060009;
-        public static final int white=0x7f06000a;
+        public static final int common_red=0x7f060002;
+        public static final int line_gray=0x7f060003;
+        public static final int main_background=0x7f060004;
+        public static final int main_color=0x7f060005;
+        public static final int main_gray=0x7f060006;
+        public static final int main_gumbo=0x7f060007;
+        public static final int main_text_color=0x7f060008;
+        public static final int select_color=0x7f060009;
+        public static final int toast_color=0x7f06000a;
+        public static final int white=0x7f06000b;
     }
     public static final class dimen {
         public static final int activity_horizontal_margin=0x7f040000;
@@ -44,31 +45,30 @@ public final class R {
         public static final int addpng=0x7f020002;
         public static final int button_shape=0x7f020003;
         public static final int delete=0x7f020004;
-        public static final int ic_action_search=0x7f020005;
-        public static final int ic_arrow_right=0x7f020006;
-        public static final int ic_arrow_up=0x7f020007;
-        public static final int icon=0x7f020008;
-        public static final int left=0x7f020009;
-        public static final int menu=0x7f02000a;
-        public static final int scan=0x7f02000b;
-        public static final int shape=0x7f02000c;
-        public static final int shape2=0x7f02000d;
-        public static final int title_bar_bg=0x7f02000e;
-        public static final int titlebar_left_btn_no=0x7f02000f;
-        public static final int titlebar_left_btn_on=0x7f020010;
-        public static final int titlebar_left_btn_selecter=0x7f020011;
-        public static final int titlebar_left_btn_up=0x7f020012;
-        public static final int titlebar_left_textcolor=0x7f020013;
-        public static final int titlebar_right_btn_selecter=0x7f020014;
-        public static final int titlebar_right_no=0x7f020015;
-        public static final int titlebar_right_on=0x7f020016;
-        public static final int titlebar_right_up=0x7f020017;
+        public static final int design_red_point=0x7f020005;
+        public static final int ic_action_search=0x7f020006;
+        public static final int ic_arrow_right=0x7f020007;
+        public static final int ic_arrow_up=0x7f020008;
+        public static final int icon=0x7f020009;
+        public static final int left=0x7f02000a;
+        public static final int menu=0x7f02000b;
+        public static final int scan=0x7f02000c;
+        public static final int shape=0x7f02000d;
+        public static final int shape2=0x7f02000e;
+        public static final int title_bar_bg=0x7f02000f;
+        public static final int titlebar_left_btn_no=0x7f020010;
+        public static final int titlebar_left_btn_on=0x7f020011;
+        public static final int titlebar_left_btn_selecter=0x7f020012;
+        public static final int titlebar_left_btn_up=0x7f020013;
+        public static final int titlebar_left_textcolor=0x7f020014;
+        public static final int titlebar_right_btn_selecter=0x7f020015;
+        public static final int titlebar_right_no=0x7f020016;
+        public static final int titlebar_right_on=0x7f020017;
+        public static final int titlebar_right_up=0x7f020018;
     }
     public static final class id {
         public static final int Layout=0x7f080027;
         public static final int Layout1=0x7f080028;
-        public static final int Layout2=0x7f080029;
-        public static final int Layout3=0x7f08002a;
         public static final int add=0x7f080022;
         public static final int bt_rg=0x7f08001e;
         public static final int bt_room=0x7f08001f;
@@ -79,6 +79,7 @@ public final class R {
         public static final int date=0x7f080003;
         public static final int electric=0x7f080009;
         public static final int etSearch=0x7f08001b;
+        public static final int image=0x7f080029;
         public static final int ivDeleteText=0x7f08001c;
         public static final int ll_title_bar=0x7f08001d;
         public static final int mark=0x7f08000a;

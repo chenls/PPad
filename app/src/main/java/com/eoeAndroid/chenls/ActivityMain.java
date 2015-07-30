@@ -38,6 +38,7 @@ public class ActivityMain extends ListActivity {
     private RadioGroup bt_rg;
     private String title_data = "room";
     private TextView btnSearch;
+    private TextView image;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -46,6 +47,7 @@ public class ActivityMain extends ListActivity {
         mDbHelper = new DiaryDbAdapter(this);
         mDbHelper.open();
         renderListView(title_data);
+        image = (TextView) findViewById(R.id.image);
         btnSearch = (TextView) findViewById(R.id.btnSearch);
         btnSearch.setOnClickListener(new TextOnClickListenerImpl());
         add = (Button) this.findViewById(R.id.add);
@@ -116,14 +118,25 @@ public class ActivityMain extends ListActivity {
      */
     private void renderListView(String data) {
         mDiaryCursor = mDbHelper.getAllNotes(data);
-//        mDiaryCursor = mDbHelper.getDiary("兔女");
         startManagingCursor(mDiaryCursor);
-        String[] from = new String[]{DiaryDbAdapter.KEY_ROOM, DiaryDbAdapter.KEY_NAME,
+        String[] from = new String[]{DiaryDbAdapter.KEY_FRIST_NAME, DiaryDbAdapter.KEY_ROOM, DiaryDbAdapter.KEY_NAME,
                 DiaryDbAdapter.KEY_DATE};
 
-        int[] to = new int[]{R.id.text1, R.id.text2, R.id.text3};
+        int[] to = new int[]{R.id.image, R.id.text1, R.id.text2, R.id.text3};
         SimpleCursorAdapter notes = new SimpleCursorAdapter(this,
                 R.layout.listview_item, mDiaryCursor, from, to);
+//        SimpleCursorAdapter.ViewBinder viewBinder = new SimpleCursorAdapter.ViewBinder() {
+//            @Override
+//            public boolean setViewValue(View view, Cursor cursor, int columnIndex) {
+//                // TODO Auto-generated method stub
+//                if (cursor.getColumnIndex(DiaryDbAdapter.KEY_NAME) == columnIndex) {    //duration为数据库中对应的属性列
+//                    image.setText("哈哈" + cursor.getString(columnIndex));  //将数据库中的数据除以1000以后在显示
+//                    return true;
+//                }
+//                return false;
+//            }
+//        };
+//        notes.setViewBinder(viewBinder);
         setListAdapter(notes);
         final ListView lv;
         lv = getListView();

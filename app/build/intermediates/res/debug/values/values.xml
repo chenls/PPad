@@ -23,14 +23,15 @@
     </string-array>
     <!-- From: file:/D:/StudioProjects/PPad/app/src/main/res/values/colors.xml -->
     <eat-comment/>
-    <color name="assistant_text_color">#9f000000</color>
+    <color name="assistant_text_color">#83000000</color>
     <color name="black">#bf000000</color>
+    <color name="common_red">#00CED1</color>
     <color name="line_gray">#27000000</color>
     <color name="main_background">#fcfcfc</color>
     <color name="main_color">#ff329de2</color>
     <color name="main_gray">#ffaaaaaa</color>
     <color name="main_gumbo">#ff80a7ae</color>
-    <color name="main_text_color">#bf000000</color>
+    <color name="main_text_color">#9f000000</color>
     <color name="select_color">#ff0f95e8</color>
     <color name="toast_color">#ff2E76B9</color>
     <color name="white">#ffffffff</color>
