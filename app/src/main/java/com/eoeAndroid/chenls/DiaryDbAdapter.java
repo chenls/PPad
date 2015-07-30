@@ -12,6 +12,7 @@ public class DiaryDbAdapter {
     public static final String KEY_ROOM = "room";
     public static final String KEY_NAME = "name";
     public static final String KEY_DATE = "date";
+    public static final String KEY_DAY = "day";
     public static final String KEY_PHONE = "phone";
     public static final String KEY_RENT = "rent";
     public static final String KEY_MONEY = "money";
@@ -27,6 +28,7 @@ public class DiaryDbAdapter {
             ", room varchar(20) not null" +
             ", name varchar(20) not null" +
             ", date Date DEFAULT NULL" +
+            ", day int(2) DEFAULT NULL" +
             ", phone int(11) DEFAULT NULL" +
             ", rent int(11) DEFAULT NULL" +
             ", money int(11) DEFAULT NULL" +
@@ -88,6 +90,9 @@ public class DiaryDbAdapter {
         initialValues.put(KEY_ROOM, room);
         initialValues.put(KEY_NAME, name);
         initialValues.put(KEY_DATE, date);
+        String[] day_array=date.split("-");
+        String day = day_array[2];
+        initialValues.put(KEY_DAY, day);
         initialValues.put(KEY_PHONE, phone);
         initialValues.put(KEY_MONEY, money);
         initialValues.put(KEY_RENT, rent);
@@ -112,9 +117,11 @@ public class DiaryDbAdapter {
         if (data.equals("room")) {
             return mDb.rawQuery("select * from diary order by room ASC", null);
         } else {
-            return mDb.rawQuery("select * from diary order by date ASC", null);
+            return mDb.rawQuery("SELECT * FROM `diary` ORDER BY (case when day<strftime('%d', 'now','+8 hour') " +
+                    "then day+40 else day end);", null);
         }
     }
+
 
     //    /**
 //     * 通过id搜索记录
