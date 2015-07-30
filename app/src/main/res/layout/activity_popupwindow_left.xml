@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:background="@color/white"
-        android:text="打开" />
+        android:text="恢复数据" />
 
     <View
         android:layout_width="fill_parent"
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:background="@color/white"
-        android:text="保存" />
+        android:text="备份数据" />
 
     <View
         android:layout_width="fill_parent"

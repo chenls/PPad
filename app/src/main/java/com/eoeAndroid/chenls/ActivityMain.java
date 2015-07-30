@@ -1,8 +1,10 @@
 package com.eoeAndroid.chenls;
 
+import android.annotation.TargetApi;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.database.Cursor;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.KeyEvent;
@@ -37,8 +39,8 @@ public class ActivityMain extends ListActivity {
     private Cursor mDiaryCursor;
     private Button add, menu;
     private long index_id = 0;// 长按删除指定数据的索引
-    private RadioGroup bt_rg;
-    private String title_data = "room";
+    private static RadioGroup bt_rg;
+    private static String title_data = "room";
     private TextView btnSearch;
     private PopupWindow popupWindow;
 
@@ -97,6 +99,7 @@ public class ActivityMain extends ListActivity {
             popupWindow.showAsDropDown(v, 0, 20);
         }
     };
+
     /**
      * 创建PopupWindow
      */
@@ -126,26 +129,34 @@ public class ActivityMain extends ListActivity {
         Button close = (Button) popupWindow_view.findViewById(R.id.close);
         open.setOnClickListener(new View.OnClickListener() {
 
+            @TargetApi(Build.VERSION_CODES.CUPCAKE)
             @Override
             public void onClick(View v) {
                 if (popupWindow != null && popupWindow.isShowing()) {
                     popupWindow.dismiss();
                     popupWindow = null;
                 }
-                Toast.makeText(ActivityMain.this, "open",
-                        Toast.LENGTH_SHORT).show();
+                try {
+                    new BackupTask(ActivityMain.this).execute("restroeDatabase");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
         save.setOnClickListener(new View.OnClickListener() {
 
+            @TargetApi(Build.VERSION_CODES.CUPCAKE)
             @Override
             public void onClick(View v) {
                 if (popupWindow != null && popupWindow.isShowing()) {
                     popupWindow.dismiss();
                     popupWindow = null;
                 }
-                Toast.makeText(ActivityMain.this, "save",
-                        Toast.LENGTH_SHORT).show();
+                try {
+                    new BackupTask(ActivityMain.this).execute("backupDatabase");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
         close.setOnClickListener(new View.OnClickListener() {
@@ -205,10 +216,21 @@ public class ActivityMain extends ListActivity {
         PgyFeedbackShakeManager.unregister();
     }
 
+    //恢复数据后刷新。
+    public static void refresh() {
+        if (title_data.equals("time")) {
+            ((RadioButton) bt_rg.findViewById(R.id.bt_room)).setChecked(true);
+            ((RadioButton) bt_rg.findViewById(R.id.bt_time)).setChecked(true);
+        } else {
+            ((RadioButton) bt_rg.findViewById(R.id.bt_time)).setChecked(true);
+            ((RadioButton) bt_rg.findViewById(R.id.bt_room)).setChecked(true);
+        }
+    }
+
     /**
      * 读取数据库数据，展示在list中
      */
-    private void renderListView(String data) {
+    public void renderListView(String data) {
         mDiaryCursor = mDbHelper.getAllNotes(data);
         startManagingCursor(mDiaryCursor);
         String[] from = new String[]{DiaryDbAdapter.KEY_FRIST_NAME, DiaryDbAdapter.KEY_ROOM, DiaryDbAdapter.KEY_NAME,
