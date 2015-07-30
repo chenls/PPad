@@ -122,26 +122,6 @@ public class DiaryDbAdapter {
         }
     }
 
-
-    //    /**
-//     * 通过id搜索记录
-//     *
-//     * @param scan
-//     * @return
-//     * @throws SQLException
-//     */
-//    public Cursor getDiary(long scan) throws SQLException {
-//        Cursor mCursor =
-//
-//                mDb.query(true, DATABASE_TABLE, new String[]{KEY_ROWID, KEY_ROOM,
-//                                KEY_NAME, KEY_DATE}, KEY_ROWID + "=" + scan, null, null,
-//                        null, null, null);
-//        if (mCursor != null) {
-//            mCursor.moveToFirst();
-//        }
-//        return mCursor;
-//
-//    }
     public Cursor getDiary(String search_context) throws SQLException {
         String sql = "select * from " +
                 DATABASE_TABLE + " where " +
