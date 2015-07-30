@@ -16,6 +16,7 @@ import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SimpleCursorAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.pgyersdk.feedback.PgyFeedbackShakeManager;
@@ -36,6 +37,7 @@ public class ActivityMain extends ListActivity {
     private long index_id = 0;// 长按删除指定数据的索引
     private RadioGroup bt_rg;
     private String title_data = "room";
+    private TextView btnSearch;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,8 @@ public class ActivityMain extends ListActivity {
         mDbHelper = new DiaryDbAdapter(this);
         mDbHelper.open();
         renderListView(title_data);
+        btnSearch = (TextView) findViewById(R.id.btnSearch);
+        btnSearch.setOnClickListener(new TextOnClickListenerImpl());
         add = (Button) this.findViewById(R.id.add);
         add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,6 +79,21 @@ public class ActivityMain extends ListActivity {
                 renderListView(title_data);
             }
         });
+    }
+
+    // 按钮点击事件
+    private class TextOnClickListenerImpl implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()) {
+                case R.id.btnSearch:
+                    Intent intent = new Intent(ActivityMain.this, Search.class);
+                    startActivity(intent);
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 
     @Override

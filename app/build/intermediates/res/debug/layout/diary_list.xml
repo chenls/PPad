@@ -82,13 +82,17 @@
                 android:background="#3fc0c0c0">
 
                 <TextView
+                    android:id="@+id/btnSearch"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="7dp"
+                    android:layout_height="38dp"
+                    android:layout_marginBottom="7dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="7dp"
                     android:background="@drawable/shape2"
-                    android:gravity="center"
-                    android:text="搜索"
+                    android:drawableLeft="@drawable/ic_action_search"
                     android:padding="7dp"
+                    android:text="搜索"
                     android:textColor="#6f000000"
                     android:textSize="15sp" />
             </LinearLayout>

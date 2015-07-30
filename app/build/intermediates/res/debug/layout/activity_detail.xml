@@ -44,10 +44,6 @@
             android:orientation="vertical">
 
             <View
-                android:layout_width="match_parent"
-                android:layout_height="35dp" />
-
-            <View
                 android:layout_width="fill_parent"
                 android:layout_height="@dimen/line"
                 android:background="@color/line_gray" />
@@ -264,15 +260,6 @@
                     android:textColor="@color/assistant_text_color"
                     android:textSize="@dimen/assistant_text" />
             </RelativeLayout>
-
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="@dimen/line"
-                android:background="@color/line_gray" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="35dp" />
 
             <View
                 android:layout_width="fill_parent"

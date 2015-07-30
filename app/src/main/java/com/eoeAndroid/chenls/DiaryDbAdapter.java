@@ -19,8 +19,6 @@ public class DiaryDbAdapter {
     public static final String KEY_WATER = "water";
     public static final String KEY_ELECTRIC = "electric";
     public static final String KEY_MARK = "mark";
-
-    private static final String TAG = "DiaryDbAdapter";
     private DatabaseHelper mDbHelper;
     private SQLiteDatabase mDb;
 
@@ -125,11 +123,13 @@ public class DiaryDbAdapter {
     public Cursor getDiary(String search_context) throws SQLException {
         String sql = "select * from " +
                 DATABASE_TABLE + " where " +
-                KEY_ROWID + " like ? or " +
+                KEY_MARK + " like ? or " +
+                KEY_PHONE + " like ? or " +
                 KEY_ROOM + " like ? or " +
                 KEY_NAME + " like ? or " +
                 KEY_DATE + " like ?";
         String[] selectionArgs = new String[]{"%" + search_context + "%",
+                "%" + search_context + "%",
                 "%" + search_context + "%",
                 "%" + search_context + "%",
                 "%" + search_context + "%"};
