@@ -3,7 +3,7 @@
 
     <!-- 定义从左向右进入的动画 -->
     <translate
-        android:duration="500"
+        android:duration="200"
         android:fromXDelta="-100%"
         android:toXDelta="0" />
 

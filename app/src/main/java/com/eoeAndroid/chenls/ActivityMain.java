@@ -4,6 +4,7 @@ import android.annotation.TargetApi;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.drawable.PaintDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.ContextMenu;
@@ -109,9 +110,11 @@ public class ActivityMain extends ListActivity {
         View popupWindow_view = getLayoutInflater().inflate(R.layout.activity_popupwindow_left, null,
                 false);
         // 创建PopupWindow实例,200,LayoutParams.MATCH_PARENT分别是宽度和高度
-        popupWindow = new PopupWindow(popupWindow_view, 200, 300, true);
+        popupWindow = new PopupWindow(popupWindow_view, 300, 350, true);
         // 设置动画效果
         popupWindow.setAnimationStyle(R.style.AnimationFade);
+        popupWindow.setFocusable(true);
+        popupWindow.setBackgroundDrawable(new PaintDrawable());
         // 点击其他地方消失
         popupWindow_view.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -195,6 +198,7 @@ public class ActivityMain extends ListActivity {
                 case R.id.btnSearch:
                     Intent intent = new Intent(ActivityMain.this, Search.class);
                     startActivity(intent);
+                    overridePendingTransition(R.anim.slide_in_buttom,R.anim.slide_out_top);
                     break;
                 default:
                     break;

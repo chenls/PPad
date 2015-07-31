@@ -11,6 +11,10 @@ public final class R {
     public static final class anim {
         public static final int in_lefttoright=0x7f040000;
         public static final int out_righttoleft=0x7f040001;
+        public static final int slide_in_buttom=0x7f040002;
+        public static final int slide_in_top=0x7f040003;
+        public static final int slide_out_buttom=0x7f040004;
+        public static final int slide_out_top=0x7f040005;
     }
     public static final class array {
         public static final int countries_array=0x7f060000;

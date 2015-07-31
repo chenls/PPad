@@ -35,7 +35,7 @@ public class BackupTask extends AsyncTask<String, Void, String> {
 //                + "/dlion/db_dlion.db");
         File dbFile = mContext.getDatabasePath("database");
         File exportDir = new File(Environment.getExternalStorageDirectory(),
-                "ZUKE-Backup");
+                "backup");
         if (!exportDir.exists()) {
             exportDir.mkdirs();
         }

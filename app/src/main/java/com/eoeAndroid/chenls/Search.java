@@ -1,12 +1,15 @@
 package com.eoeAndroid.chenls;
 
+import android.annotation.TargetApi;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.database.Cursor;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.ContextMenu;
+import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -75,6 +78,7 @@ public class Search extends ListActivity {
             switch (v.getId()) {
                 case R.id.btnSearch:
                     finish();
+                    overridePendingTransition(R.anim.slide_in_top, R.anim.slide_out_buttom);
                     break;
                 default:
                     break;
@@ -158,6 +162,20 @@ public class Search extends ListActivity {
             }
         }
         return super.onContextItemSelected(item);
+    }
+
+    @TargetApi(Build.VERSION_CODES.ECLAIR)
+    public boolean onKeyDown(int keyCode, KeyEvent event)//主要是对这个函数的复写
+    {
+        // TODO Auto-generated method stub
+
+        if ((keyCode == KeyEvent.KEYCODE_BACK) && (event.getAction() == KeyEvent.ACTION_DOWN)) {
+            finish();
+            overridePendingTransition(R.anim.slide_in_top, R.anim.slide_out_buttom);
+            return true;
+
+        }
+        return super.onKeyDown(keyCode, event);
     }
 
 }
