@@ -19,6 +19,7 @@ public class BackupTask extends AsyncTask<String, Void, String> {
     public static final String COMMAND_RESTORE = "restroeDatabase";
     private Context mContext;
     private String result = "";
+    private File backup;
 
     public BackupTask(Context context) {
         this.mContext = context;
@@ -38,7 +39,7 @@ public class BackupTask extends AsyncTask<String, Void, String> {
         if (!exportDir.exists()) {
             exportDir.mkdirs();
         }
-        File backup = new File(exportDir, dbFile.getName());
+        backup = new File(exportDir, dbFile.getName());
         String command = params[0];
         if (command.equals(COMMAND_BACKUP)) {
             try {
@@ -91,6 +92,9 @@ public class BackupTask extends AsyncTask<String, Void, String> {
     @Override
     protected void onPostExecute(String result) {
         Toast.makeText(mContext, result, Toast.LENGTH_SHORT).show();
+        if (result.equals("备份成功")) {
+            Toast.makeText(mContext, "备份路径:" + backup, Toast.LENGTH_SHORT).show();
+        }
         ActivityMain.refresh();
 
     }

@@ -17,7 +17,7 @@ public class MoreActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_more);
         currentCopyright = (TextView) findViewById(R.id.currentCopyright);
-        currentCopyright.setText("当前版本号为" + getVersion(this));
+        currentCopyright.setText("当前版本号为:" + getVersion(this));
         buttonBack = (Button) findViewById(R.id.button_back);
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -113,4 +113,5 @@
         android:text="\t\t\t\t您还没有添加数据呢,赶紧添加几条试试吧。\n\t\t\t\t摇一摇手机可以反馈意见哟！"
         android:textColor="#c0c0c0"
         android:textSize="16sp" />
+
 </LinearLayout><!-- From: file:/D:/StudioProjects/PPad/app/src/main/res/layout/diary_list.xml -->

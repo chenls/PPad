@@ -143,15 +143,15 @@ public class Detail extends Activity {
         mark.setOnClickListener(new OnClickListenerImpl());
         water.setOnClickListener(new OnClickListenerImpl());
         electric.setOnClickListener(new OnClickListenerImpl());
-        image(text0, drawable.about, drawable.ic_arrow_right);
-        image(text1, drawable.about, drawable.ic_arrow_right);
-        image(text11, drawable.about, drawable.ic_arrow_right);
-        image(text111, drawable.about, drawable.ic_arrow_right);
-        image(text2, drawable.about, drawable.ic_arrow_right);
-        image(text22, drawable.about, drawable.ic_arrow_right);
-        image(text_mark, drawable.about, drawable.ic_arrow_up);
-        image(text3, drawable.about, drawable.ic_arrow_up);
-        image(text4, drawable.about, drawable.ic_arrow_up);
+        image(text0, drawable.room, drawable.ic_arrow_right);
+        image(text1, drawable.name, drawable.ic_arrow_right);
+        image(text11, drawable.date, drawable.ic_arrow_right);
+        image(text111, drawable.phone, drawable.ic_arrow_right);
+        image(text2, drawable.rent, drawable.ic_arrow_right);
+        image(text22, drawable.money, drawable.ic_arrow_right);
+        image(text_mark, drawable.mark, drawable.ic_arrow_up);
+        image(text3, drawable.water, drawable.ic_arrow_up);
+        image(text4, drawable.electric, drawable.ic_arrow_up);
     }
 
     public void image(TextView text, int x, int y) {
@@ -261,33 +261,33 @@ public class Detail extends Activity {
                     if (f3) {
                         mark.setVisibility(View.VISIBLE);
                         f3 = !f3;
-                        image(text_mark, drawable.about, drawable.ic_arrow_up);
+                        image(text_mark, drawable.mark, drawable.ic_arrow_up);
                     } else {
                         mark.setVisibility(View.GONE);
                         f3 = !f3;
-                        image(text_mark, drawable.about, drawable.ic_arrow_right);
+                        image(text_mark, drawable.mark, drawable.ic_arrow_right);
                     }
                     break;
                 case id.text3:
                     if (f) {
                         water.setVisibility(View.VISIBLE);
                         f = !f;
-                        image(text3, drawable.about, drawable.ic_arrow_up);
+                        image(text3, drawable.water, drawable.ic_arrow_up);
                     } else {
                         water.setVisibility(View.GONE);
                         f = !f;
-                        image(text3, drawable.about, drawable.ic_arrow_right);
+                        image(text3, drawable.water, drawable.ic_arrow_right);
                     }
                     break;
                 case id.text4:
                     if (f2) {
                         electric.setVisibility(View.VISIBLE);
                         f2 = !f2;
-                        image(text4, drawable.about, drawable.ic_arrow_up);
+                        image(text4, drawable.electric, drawable.ic_arrow_up);
                     } else {
                         electric.setVisibility(View.GONE);
                         f2 = !f2;
-                        image(text4, drawable.about, drawable.ic_arrow_right);
+                        image(text4, drawable.electric, drawable.ic_arrow_right);
                     }
                     break;
                 default:
