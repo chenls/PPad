@@ -67,6 +67,7 @@
     <string name="title_activity_add_data">Add_data</string>
     <string name="title_activity_amend">Amend</string>
     <string name="title_activity_detail">detail</string>
+    <string name="title_activity_more">MoreActivity</string>
     <string name="title_activity_search">Search</string>
     <string name="wel_title">租\t\t客</string>
     <string name="wel_title1">来一场说走就走的旅行</string>

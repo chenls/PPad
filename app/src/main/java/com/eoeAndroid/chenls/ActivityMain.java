@@ -132,14 +132,14 @@ public class ActivityMain extends ListActivity {
             @TargetApi(Build.VERSION_CODES.CUPCAKE)
             @Override
             public void onClick(View v) {
-                if (popupWindow != null && popupWindow.isShowing()) {
-                    popupWindow.dismiss();
-                    popupWindow = null;
-                }
                 try {
                     new BackupTask(ActivityMain.this).execute("restroeDatabase");
                 } catch (Exception e) {
                     e.printStackTrace();
+                }
+                if (popupWindow != null && popupWindow.isShowing()) {
+                    popupWindow.dismiss();
+                    popupWindow = null;
                 }
             }
         });
@@ -148,14 +148,14 @@ public class ActivityMain extends ListActivity {
             @TargetApi(Build.VERSION_CODES.CUPCAKE)
             @Override
             public void onClick(View v) {
-                if (popupWindow != null && popupWindow.isShowing()) {
-                    popupWindow.dismiss();
-                    popupWindow = null;
-                }
                 try {
                     new BackupTask(ActivityMain.this).execute("backupDatabase");
                 } catch (Exception e) {
                     e.printStackTrace();
+                }
+                if (popupWindow != null && popupWindow.isShowing()) {
+                    popupWindow.dismiss();
+                    popupWindow = null;
                 }
             }
         });
@@ -163,12 +163,13 @@ public class ActivityMain extends ListActivity {
 
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(ActivityMain.this, MoreActivity.class);
+                startActivity(intent);
                 if (popupWindow != null && popupWindow.isShowing()) {
                     popupWindow.dismiss();
                     popupWindow = null;
                 }
-                Toast.makeText(ActivityMain.this, "close",
-                        Toast.LENGTH_SHORT).show();
             }
         });
 

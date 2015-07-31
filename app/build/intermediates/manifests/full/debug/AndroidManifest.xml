@@ -64,6 +64,10 @@
             android:name="com.eoeAndroid.chenls.Search"
             android:label="@string/title_activity_search" >
         </activity>
+        <activity
+            android:name="com.eoeAndroid.chenls.MoreActivity"
+            android:label="@string/title_activity_more" >
+        </activity>
     </application>
 
 </manifest>

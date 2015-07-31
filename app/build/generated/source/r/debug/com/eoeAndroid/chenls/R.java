@@ -71,33 +71,34 @@ public final class R {
         public static final int titlebar_right_up=0x7f020018;
     }
     public static final class id {
-        public static final int Layout=0x7f0a002a;
-        public static final int Layout1=0x7f0a002b;
-        public static final int add=0x7f0a0025;
-        public static final int bt_rg=0x7f0a0021;
-        public static final int bt_room=0x7f0a0022;
-        public static final int bt_time=0x7f0a0023;
-        public static final int btnSearch=0x7f0a001c;
+        public static final int Layout=0x7f0a002c;
+        public static final int Layout1=0x7f0a002d;
+        public static final int add=0x7f0a0027;
+        public static final int bt_rg=0x7f0a0023;
+        public static final int bt_room=0x7f0a0024;
+        public static final int bt_time=0x7f0a0025;
+        public static final int btnSearch=0x7f0a001e;
         public static final int button_back=0x7f0a0000;
-        public static final int close=0x7f0a001a;
-        public static final int created=0x7f0a0027;
+        public static final int close=0x7f0a001c;
+        public static final int created=0x7f0a0029;
+        public static final int currentCopyright=0x7f0a0019;
         public static final int date=0x7f0a0003;
         public static final int electric=0x7f0a0009;
-        public static final int etSearch=0x7f0a001e;
-        public static final int image=0x7f0a002c;
-        public static final int ivDeleteText=0x7f0a001f;
-        public static final int ll_title_bar=0x7f0a0020;
+        public static final int etSearch=0x7f0a0020;
+        public static final int image=0x7f0a0018;
+        public static final int ivDeleteText=0x7f0a0021;
+        public static final int ll_title_bar=0x7f0a0022;
         public static final int mark=0x7f0a000a;
-        public static final int menu=0x7f0a0024;
+        public static final int menu=0x7f0a0026;
         public static final int money=0x7f0a0006;
         public static final int name=0x7f0a0002;
-        public static final int open=0x7f0a0018;
+        public static final int open=0x7f0a001a;
         public static final int phone=0x7f0a0005;
         public static final int rent=0x7f0a0007;
-        public static final int rlSearchFrameDelete=0x7f0a001d;
+        public static final int rlSearchFrameDelete=0x7f0a001f;
         public static final int room=0x7f0a0001;
-        public static final int row=0x7f0a0026;
-        public static final int save=0x7f0a0019;
+        public static final int row=0x7f0a0028;
+        public static final int save=0x7f0a001b;
         public static final int sure=0x7f0a000b;
         public static final int text0=0x7f0a000f;
         public static final int text1=0x7f0a0010;
@@ -107,27 +108,28 @@ public final class R {
         public static final int text22=0x7f0a0014;
         public static final int text3=0x7f0a0016;
         public static final int text4=0x7f0a0017;
-        public static final int textView1=0x7f0a0028;
-        public static final int textView2=0x7f0a0029;
+        public static final int textView1=0x7f0a002a;
+        public static final int textView2=0x7f0a002b;
         public static final int text_boby=0x7f0a000e;
         public static final int text_mark=0x7f0a0015;
         public static final int text_title=0x7f0a000d;
         public static final int time_button=0x7f0a0004;
         public static final int title=0x7f0a000c;
-        public static final int top=0x7f0a001b;
+        public static final int top=0x7f0a001d;
         public static final int water=0x7f0a0008;
     }
     public static final class layout {
         public static final int activity_add_data=0x7f030000;
         public static final int activity_amend=0x7f030001;
         public static final int activity_detail=0x7f030002;
-        public static final int activity_popupwindow_left=0x7f030003;
-        public static final int activity_search=0x7f030004;
-        public static final int diary_list=0x7f030005;
-        public static final int diary_row=0x7f030006;
-        public static final int diary_welcome=0x7f030007;
-        public static final int list_item=0x7f030008;
-        public static final int listview_item=0x7f030009;
+        public static final int activity_more=0x7f030003;
+        public static final int activity_popupwindow_left=0x7f030004;
+        public static final int activity_search=0x7f030005;
+        public static final int diary_list=0x7f030006;
+        public static final int diary_row=0x7f030007;
+        public static final int diary_welcome=0x7f030008;
+        public static final int list_item=0x7f030009;
+        public static final int listview_item=0x7f03000a;
     }
     public static final class string {
         public static final int action_settings=0x7f080000;
@@ -148,9 +150,10 @@ public final class R {
         public static final int title_activity_add_data=0x7f08000f;
         public static final int title_activity_amend=0x7f080010;
         public static final int title_activity_detail=0x7f080011;
-        public static final int title_activity_search=0x7f080012;
-        public static final int wel_title=0x7f080013;
-        public static final int wel_title1=0x7f080014;
+        public static final int title_activity_more=0x7f080012;
+        public static final int title_activity_search=0x7f080013;
+        public static final int wel_title=0x7f080014;
+        public static final int wel_title1=0x7f080015;
     }
     public static final class style {
         public static final int AnimationFade=0x7f090000;
