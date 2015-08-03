@@ -1,6 +1,5 @@
 package com.eoeAndroid.chenls;
 
-import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Context;
@@ -16,10 +15,11 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import java.util.Calendar;
 
-public class Add_data extends Activity {
-    private Button buttonBack;
+public class Add_data extends ContactActivity {
+    private Button buttonBack,btn_contact;
     private AutoCompleteTextView room;
     private EditText name;
     private EditText date;
@@ -45,6 +45,8 @@ public class Add_data extends Activity {
         electric = (EditText) findViewById(R.id.electric);
         mark = (EditText) findViewById(R.id.mark);
         sure = (Button) findViewById(R.id.sure);
+        btn_contact = (Button) findViewById(R.id.btn_contact);
+        edtSelectedContact = this.phone;
     }
 
     private Dialog mdialog;
@@ -60,6 +62,7 @@ public class Add_data extends Activity {
         mDbHelper = new DiaryDbAdapter(this);
         mDbHelper.open();
         assignViews();
+        btn_contact.setOnClickListener(new OnClickListenerImpl());
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,7 +75,18 @@ public class Add_data extends Activity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_item, countries);//配置Adaptor
         room.setAdapter(adapter);
     }
-
+//    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        if (requestCode != 1) {
+//            return;
+//        }
+//        if (resultCode == RESULT_OK) {
+//            Bundle bundle = data.getBundleExtra("bundle");
+//            String resultString = bundle.getString("result");
+//            phone.setText(resultString);
+//
+//        }
+//    }
     // 按钮点击事件
     private class OnClickListenerImpl implements View.OnClickListener {
         @SuppressWarnings("deprecation")
@@ -136,6 +150,9 @@ public class Add_data extends Activity {
                                     View.GONE);
                         }
                     }
+                    break;
+                case R.id.btn_contact:
+                    startContact();
                     break;
             }
         }

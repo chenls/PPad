@@ -75,7 +75,6 @@
                     android:layout_centerVertical="true"
                     android:layout_marginRight="35dp"
                     android:gravity="center_vertical"
-                    android:text="搜索"
                     android:textColor="@color/assistant_text_color"
                     android:textSize="@dimen/assistant_text" />
             </RelativeLayout>

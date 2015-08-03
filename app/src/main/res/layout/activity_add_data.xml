@@ -122,6 +122,14 @@
                     android:paddingLeft="10dp"
                     android:textSize="18sp" />
 
+                <Button
+                    android:id="@+id/btn_contact"
+                    android:layout_width="41dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="-2.5dp"
+                    android:layout_marginLeft="-48sp"
+                    android:background="@drawable/czzx_addresslist_p" />
+
             </LinearLayout>
 
             <LinearLayout
