@@ -6,7 +6,7 @@
         jumboMode="false"
         revision="22.0.1"
         sha1="13e6d1b17a22bd3c1c78bfccf26c535ba28053af">
-        <dex dex="E:\StudioProjects\PPad\app\build\intermediates\pre-dexed\debug\pgyer_sdk_2.1.2-914aacb27924fa54af2e9eede21dd5bddec1954c.jar" />
+        <dex dex="E:\StudioProjects\PPad\app\build\intermediates\pre-dexed\release\pgyer_sdk_2.1.2-914aacb27924fa54af2e9eede21dd5bddec1954c.jar" />
     </item>
 
 </items>
