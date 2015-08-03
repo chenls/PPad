@@ -59,7 +59,6 @@
                     android:layout_height="wrap_content"
                     android:background="#ffffff"
                     android:clickable="true"
-                    android:drawableLeft="@drawable/electric"
                     android:drawablePadding="10dp"
                     android:drawableRight="@drawable/ic_arrow_right"
                     android:gravity="center_vertical"
@@ -97,7 +96,6 @@
                     android:layout_height="wrap_content"
                     android:background="#ffffff"
                     android:clickable="true"
-                    android:drawableLeft="@drawable/electric"
                     android:drawablePadding="10dp"
                     android:drawableRight="@drawable/ic_arrow_right"
                     android:gravity="center_vertical"
@@ -133,7 +131,6 @@
                     android:layout_height="wrap_content"
                     android:background="#ffffff"
                     android:clickable="true"
-                    android:drawableLeft="@drawable/electric"
                     android:drawablePadding="10dp"
                     android:drawableRight="@drawable/ic_arrow_right"
                     android:gravity="center_vertical"
@@ -169,7 +166,6 @@
                     android:layout_height="wrap_content"
                     android:background="#ffffff"
                     android:clickable="true"
-                    android:drawableLeft="@drawable/electric"
                     android:drawablePadding="10dp"
                     android:drawableRight="@drawable/ic_arrow_right"
                     android:gravity="center_vertical"
@@ -185,6 +181,8 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="35dp"
+                    android:inputType="number"
+                    android:autoLink="phone"
                     android:textColor="@color/assistant_text_color"
                     android:textSize="@dimen/assistant_text" />
             </RelativeLayout>
@@ -205,7 +203,6 @@
                     android:layout_height="wrap_content"
                     android:background="#ffffff"
                     android:clickable="true"
-                    android:drawableLeft="@drawable/electric"
                     android:drawablePadding="10dp"
                     android:drawableRight="@drawable/ic_arrow_right"
                     android:gravity="center_vertical"
@@ -221,6 +218,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="35dp"
+                    android:inputType="number"
                     android:textColor="@color/assistant_text_color"
                     android:textSize="@dimen/assistant_text" />
             </RelativeLayout>
@@ -241,7 +239,6 @@
                     android:layout_height="wrap_content"
                     android:background="#ffffff"
                     android:clickable="true"
-                    android:drawableLeft="@drawable/electric"
                     android:drawablePadding="10dp"
                     android:drawableRight="@drawable/ic_arrow_right"
                     android:gravity="center_vertical"
@@ -257,6 +254,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="35dp"
+                    android:inputType="number"
                     android:textColor="@color/assistant_text_color"
                     android:textSize="@dimen/assistant_text" />
             </RelativeLayout>
@@ -277,7 +275,6 @@
                     android:layout_height="wrap_content"
                     android:background="#ffffff"
                     android:clickable="true"
-                    android:drawableLeft="@drawable/electric"
                     android:drawablePadding="10dp"
                     android:drawableRight="@drawable/ic_arrow_up"
                     android:gravity="center_vertical"
@@ -319,7 +316,6 @@
                     android:layout_height="wrap_content"
                     android:background="#ffffff"
                     android:clickable="true"
-                    android:drawableLeft="@drawable/electric"
                     android:drawablePadding="10dp"
                     android:drawableRight="@drawable/ic_arrow_up"
                     android:gravity="center_vertical"
@@ -362,7 +358,6 @@
                     android:layout_height="wrap_content"
                     android:background="#ffffff"
                     android:clickable="true"
-                    android:drawableLeft="@drawable/electric"
                     android:drawablePadding="10dp"
                     android:drawableRight="@drawable/ic_arrow_up"
                     android:gravity="center_vertical"
@@ -395,4 +390,4 @@
         </LinearLayout>
     </ScrollView>
 
-</LinearLayout><!-- From: file:/D:/StudioProjects/PPad/app/src/main/res/layout/activity_detail.xml -->
+</LinearLayout><!-- From: file:/E:/StudioProjects/PPad/app/src/main/res/layout/activity_detail.xml -->

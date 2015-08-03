@@ -91,5 +91,6 @@
     <orderEntry type="library" exported="" name="classes" level="project" />
     <orderEntry type="library" exported="" name="android-support-v4" level="project" />
     <orderEntry type="library" exported="" name="pgyer_sdk_2.1.2" level="project" />
+    <orderEntry type="library" exported="" name="1_pgyer_sdk_2.1.2" level="project" />
   </component>
 </module>

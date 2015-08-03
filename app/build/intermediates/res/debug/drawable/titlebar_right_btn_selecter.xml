@@ -5,4 +5,4 @@
     <item android:state_pressed="true" android:drawable="@drawable/titlebar_right_up" />
     <item android:drawable="@drawable/titlebar_right_no" />
 </selector>
-<!-- From: file:/D:/StudioProjects/PPad/app/src/main/res/drawable/titlebar_right_btn_selecter.xml -->
+<!-- From: file:/E:/StudioProjects/PPad/app/src/main/res/drawable/titlebar_right_btn_selecter.xml -->

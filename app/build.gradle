@@ -22,4 +22,5 @@ dependencies {
     compile files('D:/StudioProjects/PPad/libs/android-support-v4.jar')
     compile files('D:/StudioProjects/PPad/libs/pgyer_sdk_2.1.2.jar')
     compile files('D:/StudioProjects/PPad/libs/classes.jar')
+    compile files('E:/StudioProjects/PPad/libs/pgyer_sdk_2.1.2.jar')
 }

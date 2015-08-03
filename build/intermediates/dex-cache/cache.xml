@@ -2,11 +2,11 @@
 <items version="2" >
 
     <item
-        jar="D:\StudioProjects\PPad\libs\classes.jar"
+        jar="E:\StudioProjects\PPad\libs\pgyer_sdk_2.1.2.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="ab78ed461deab5206c4cac6bbcf60e6d963cfd85">
-        <dex dex="D:\StudioProjects\PPad\app\build\intermediates\pre-dexed\debug\classes-b34882c05c5b4ebdddb4e1fe857e6527750af295.jar" />
+        sha1="13e6d1b17a22bd3c1c78bfccf26c535ba28053af">
+        <dex dex="E:\StudioProjects\PPad\app\build\intermediates\pre-dexed\debug\pgyer_sdk_2.1.2-914aacb27924fa54af2e9eede21dd5bddec1954c.jar" />
     </item>
 
 </items>

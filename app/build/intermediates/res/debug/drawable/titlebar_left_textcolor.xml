@@ -4,4 +4,4 @@
     <item android:state_checked="true" android:color="@color/main_color" />
     <item android:color="@color/white" />
 </selector>
-<!-- From: file:/D:/StudioProjects/PPad/app/src/main/res/drawable/titlebar_left_textcolor.xml -->
+<!-- From: file:/E:/StudioProjects/PPad/app/src/main/res/drawable/titlebar_left_textcolor.xml -->
